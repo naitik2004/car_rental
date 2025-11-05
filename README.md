@@ -110,11 +110,13 @@ User Dashboard
 
 
 
-👨‍💻 Author
-Naitik Pandey
-💼 Full-Stack Developer
-📧 naitikpandey@example.com
-🌐 GitHub
+## 👨‍💻 Author
+
+**Naitik Pandey**  
+💼 Full-Stack Developer  
+📧 [naitik123456789pandey@gmail.com](mailto:naitik123456789pandey@gmail.com)  
+🌐 [GitHub](https://github.com/naitik2004)
+
 
 
 📝 License
