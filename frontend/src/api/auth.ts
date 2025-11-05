@@ -24,3 +24,4 @@ export const login = async (email: string, password: string): Promise<AuthRespon
   const { data } = await API.post("/auth/login", { email, password });
   return data;
 };
+

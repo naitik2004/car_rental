@@ -19,7 +19,8 @@ const Login: React.FC = () => {
         if (res.user.role === "ADMIN") navigate("/admin-dashboard");
         else navigate("/dashboard");
       }
-    } catch (err: unknown) {
+    } catch (err) {
+      console.error("Login failed:", err);
       alert("Login failed");
     }
   };
