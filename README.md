@@ -119,14 +119,3 @@ Naitik Pandey
 
 📝 License
 This project is open source under the MIT License.
-
-
----
-
-### ✅ Bonus Tip:
-If you want to make it look extra clean on GitHub:
-1. Replace the placeholder email.
-2. Add screenshots later in `/frontend/public/` and reference them.
-3. Add a small logo or banner (optional).
-
----
