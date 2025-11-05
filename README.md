@@ -130,5 +130,3 @@ If you want to make it look extra clean on GitHub:
 3. Add a small logo or banner (optional).
 
 ---
-
-Would you like me to also generate a **LICENSE (MIT)** file so your GitHub repo is fully professional and open-source ready?
