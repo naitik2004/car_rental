@@ -10,15 +10,21 @@ const Login: React.FC = () => {
     try {
       const res = await login(form.email, form.password);
 
-      if (res.token) {
-        // ✅ Store token and role AFTER successful login
-        localStorage.setItem("token", res.token);
-        localStorage.setItem("role", res.user.role);
-
-        // ✅ Redirect based on role
-        if (res.user.role === "ADMIN") navigate("/admin-dashboard");
-        else navigate("/dashboard");
+      // If no response or no token
+      if (!res || !res.token) {
+        alert("Invalid response from server");
+        return;
       }
+
+      // Safe access to res.user
+      const userRole = res.user?.role ?? "USER";
+
+      // Save token + role
+      localStorage.setItem("token", res.token);
+      localStorage.setItem("role", userRole);
+
+      // Redirect based on role
+      navigate(userRole === "ADMIN" ? "/admin-dashboard" : "/dashboard");
     } catch (err) {
       console.error("Login failed:", err);
       alert("Login failed");

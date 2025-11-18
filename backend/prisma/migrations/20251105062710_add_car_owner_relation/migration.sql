@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `Car` ADD COLUMN `ownerId` INTEGER NULL;
+
+-- AddForeignKey
+ALTER TABLE `Car` ADD CONSTRAINT `Car_ownerId_fkey` FOREIGN KEY (`ownerId`) REFERENCES `User`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;

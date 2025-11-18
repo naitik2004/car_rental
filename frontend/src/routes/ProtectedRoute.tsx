@@ -6,24 +6,24 @@ interface ProtectedRouteProps {
   requiredRole?: "USER" | "ADMIN";
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
-  children,
-  requiredRole,
-}) => {
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, requiredRole }) => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
 
   // 1️⃣ Not logged in → redirect to /login
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
+  if (!token) return <Navigate to="/login" replace />;
 
-  // 2️⃣ Logged in but role doesn’t match (e.g., user tries admin page)
+  // 2️⃣ Logged in but role doesn’t match the required one
   if (requiredRole && role !== requiredRole) {
-    return <Navigate to="/dashboard" replace />;
+    // 👇 Send them to their correct dashboard
+    return role === "ADMIN" ? (
+      <Navigate to="/admin-dashboard" replace />
+    ) : (
+      <Navigate to="/dashboard" replace />
+    );
   }
 
-  // 3️⃣ Otherwise → show the page
+  // 3️⃣ Otherwise → access granted
   return <>{children}</>;
 };
 
